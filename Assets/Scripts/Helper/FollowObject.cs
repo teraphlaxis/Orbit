@@ -9,6 +9,9 @@ public class FollowObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_FollowObject == null)
+            return;
+
         Vector3 pos = m_FollowObject.position;
 
         if (m_FollowAxis.x < 1)

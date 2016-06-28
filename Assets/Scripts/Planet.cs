@@ -41,7 +41,7 @@ public class Planet : MonoBehaviour
             float r = (planet.transform.position - transform.position).magnitude;
             float f = G * (planet.m_Body.mass * m_Body.mass / Mathf.Pow(r, 2));
 
-            Vector3 vec = (transform.position - planet.transform.position).normalized * f;
+            Vector3 vec = (transform.position - planet.transform.position).normalized * (f / 1000f);
 
             if (!float.IsNaN(vec.x) && !float.IsNaN(vec.y) && !float.IsNaN(vec.z))
                 planet.m_Body.AddForce(vec);
